@@ -48,7 +48,7 @@ class Agent:
     def run(self, input_text: str):
         raw_response = self.executor.invoke({"input": input_text})
         try:
-            response = self.output_parser.parse(raw_response.get("output", "")[0]["text"])
+            response = self.output_parser.parse(raw_response.get("output", ""))
             return response
         except Exception as e:
             print(f"Error parsing response: {e}")
