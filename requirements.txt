@@ -1,0 +1,28 @@
+# Utils
+python-dotenv
+
+# API
+fastapi
+uvicorn
+requests
+
+# LLMs
+langchain
+langchain-openai
+sentence-transformers
+langchain-ollama
+ollama
+langgraph
+
+# Agents and Tools
+langchain-mcp-adapters
+langchain-community
+pydantic
+wikipedia
+
+# RAG
+pandas
+langchain-huggingface
+duckduckgo-search
+chromadb
+langchain-chroma
