@@ -1,4 +1,4 @@
-from base_agent import BaseAgent
+from .base_agent import BaseAgent
 from langchain_core.prompts import ChatPromptTemplate
 
 from ..tools.general_tools import search_tool, wiki_tool, save_tool, chroma_search_tool

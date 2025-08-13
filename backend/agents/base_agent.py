@@ -33,9 +33,10 @@ class BaseAgent:
             prompt=self.prompt,
             tools=self.tools
         )
-        self.executor = AgentExecutor(agent=self.agent, tools=self.tools, verbose=True)
+        self.executor = AgentExecutor(agent=self.agent, tools=self.tools, verbose=False)
         
     def __call__(self, state : State):
-        user_message = state.messages[-1].content
-        self.executor.run(input=user_message, chat_history=state.messages)
+        user_message = state.get("messages", [{}])[-1].get("content", "")
+        response = self.executor.invoke({"input": user_message, "chat_history": state.get("messages", [])})
+        state["messages"].append({"role": "assistant", "content": response.get("output", response)})
         return state
