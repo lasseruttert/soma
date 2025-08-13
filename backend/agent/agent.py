@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain.agents import create_tool_calling_agent, AgentExecutor
-from backend.tools.tools import search_tool, wiki_tool, save_tool, chroma_search_tool
+from backend.tools.general_tools import search_tool, wiki_tool, save_tool, chroma_search_tool
 
 load_dotenv()
 
